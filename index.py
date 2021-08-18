@@ -136,7 +136,6 @@ print('-'.join(friends_list))
 print('-'.join(msg.split()))
 print(msg.replace(' ', ''))
 
-"""
 # Split - Join Exercise
 csv = 'Eric,John,Michael,Terry,Graham:TerrG;Brian'
 friends_list = ['Exercise: fill me with names']
@@ -147,3 +146,34 @@ print(friends_list)
 
 # Tuples
 friends_tuple = ('Jhon', 'Terry', 'Eric')
+
+# Sets
+friends_set = {'John', 'Michael', 'Terry', 'Eric', 'Eric', 'Graham'}
+my_friends_set = {'Reg', 'Loretta', 'Colin', 'Eric', 'Graham'}
+
+print(friends_set.intersection(my_friends_set))  # .difference .union
+"""
+# Sets - Exercises
+friends = {'John', 'Michael', 'Terry', 'Eric', 'Graham'}
+my_friends = {'Reg', 'Loretta', 'Colin', 'John', 'Graham'}
+cars = ['900', '420', 'V70', '911', '996',
+        'V90', '911', '911', 'S', '328', '900']
+
+# 1. Check if 'Eric' and 'John' exist in friends
+print('Eric' in friends and 'John' in friends)
+# 2. Comnbine or add the two sets
+print(friends.union(my_friends))
+print(friends | my_friends)
+# 3. Find names that are in both sets
+print(friends.intersection(my_friends))
+print(friends & my_friends)
+# 4. Find names that are only in friends
+print(friends.difference(my_friends))
+print(friends - my_friends)
+# 5. Show only the names who only appear in one of the lists
+print((friends - my_friends).union(my_friends - friends))
+print(my_friends.symmetric_difference(friends))
+print(my_friends ^ friends)
+# 6. Create a new cars-list without duplicates
+cars_no_dupl = list(set(cars))
+print(cars_no_dupl)
