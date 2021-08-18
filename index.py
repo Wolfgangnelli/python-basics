@@ -109,7 +109,6 @@ new_friends = friends[:]
 print(friends)
 print(new_friends)
 
-"""
 # Lists - Exercise - Selling lemonade
 sales_w1 = [7, 3, 42, 19, 15, 35, 9]
 sales_w2 = [12, 4, 26, 10, 7, 28]
@@ -127,3 +126,24 @@ worst_day = sales[0] * 1.5
 print(f'The total profit is: {profit_tot}$')
 print(f'The best day i have earned {best_day}$')
 print(f'The worst day i have earned only {worst_day}$')
+
+# Split - Join
+msg = 'Welcome to Python 101: Split and Join'
+csv = 'Eric, John, Michael, Terry,Graham'
+friends_list = ['Eric', 'John', 'Michael', 'Terry', 'Graham']
+print(msg.split())  # csv.split(',')
+print('-'.join(friends_list))
+print('-'.join(msg.split()))
+print(msg.replace(' ', ''))
+
+"""
+# Split - Join Exercise
+csv = 'Eric,John,Michael,Terry,Graham:TerrG;Brian'
+friends_list = ['Exercise: fill me with names']
+
+friends_list = print(','.join(','.join(csv.split(';')).split(':')).split(','))
+# csv.replace(';', ',').replace(':', ',').split(',')
+print(friends_list)
+
+# Tuples
+friends_tuple = ('Jhon', 'Terry', 'Eric')
