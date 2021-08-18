@@ -1,4 +1,5 @@
 """
+# Variables, Datatypes, Typecasting
 failed_subjects = 2
 name = "John"
 is_going_to_party = False
@@ -55,9 +56,25 @@ print(msg.replace('Python', 'Javascript'))
 print('Python' in msg)
 print('Python' not in msg)
 
-"""
 name = 'TERRY'
 color = 'RED'
 msg = '[' + name + '] loves the color ' + color + '!'
 msg1 = f'[{name.capitalize()}] loves the color {color.lower()}!'
 print(msg1)
+
+# User Input
+name = input('What is your name?: ')
+age = input('What is your age?: ')
+print(f'Hello {name}! You are {age} years old.')
+
+num1 = input('Enter a digit: ')
+num2 = input('Enter a second number: ')
+answer = float(num1)+float(num2)
+print(answer)
+
+"""
+# User Input Exercise
+first_name = input('Enter your name: ')
+distance_km = float(input('Enter the distance in km: '))
+distance_miles = round(distance_km / 1.609, 1)
+print(f'Hi {first_name.capitalize()}! The distances are: {distance_km} km and {distance_miles} miles')
