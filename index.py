@@ -72,9 +72,58 @@ num2 = input('Enter a second number: ')
 answer = float(num1)+float(num2)
 print(answer)
 
-"""
 # User Input Exercise
 first_name = input('Enter your name: ')
 distance_km = float(input('Enter the distance in km: '))
 distance_miles = round(distance_km / 1.609, 1)
 print(f'Hi {first_name.capitalize()}! The distances are: {distance_km} km and {distance_miles} miles')
+
+# Lists
+friends = ['John', 'Mario', 'Franco', 'Guido']
+print(friends[0], friends[2])
+print(friends[:2])
+print(len(friends))
+print(friends.index('Mario'))
+
+friends = ['John', 'Marco', 'Andrea', 'Massimo', 'Alessandro']
+cars = [911, 130, 328, 535, 740, 308]
+print(friends)
+
+friends.sort()  # asc
+print(friends)
+friends.sort(reverse=True)  # desc
+print(friends)
+friends.reverse()
+print(friends)
+print(sum(cars))  # min() max() sum()
+
+
+friends.insert(0, 'Francesco')  # append() insert()
+# friends.extend(cars)
+friends.remove('Francesco')
+friends.pop(0)
+# friends.clear()
+# del friends
+new_friends = friends[:]
+# or friends.copy() or list(friends)   ways for copy list
+print(friends)
+print(new_friends)
+
+"""
+# Lists - Exercise - Selling lemonade
+sales_w1 = [7, 3, 42, 19, 15, 35, 9]
+sales_w2 = [12, 4, 26, 10, 7, 28]
+sales = []
+
+last_day_w2 = int(input('How many lemonade today?: '))
+sales_w2.append(last_day_w2)
+sales = sales_w1 + sales_w2
+# sales.extend(sales_w1)
+# sales.extend(sales_w2)
+sales.sort()
+profit_tot = sum(sales) * 1.5
+best_day = sales[-1] * 1.5
+worst_day = sales[0] * 1.5
+print(f'The total profit is: {profit_tot}$')
+print(f'The best day i have earned {best_day}$')
+print(f'The worst day i have earned only {worst_day}$')
