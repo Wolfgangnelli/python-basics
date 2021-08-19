@@ -152,7 +152,6 @@ friends_set = {'John', 'Michael', 'Terry', 'Eric', 'Eric', 'Graham'}
 my_friends_set = {'Reg', 'Loretta', 'Colin', 'Eric', 'Graham'}
 
 print(friends_set.intersection(my_friends_set))  # .difference .union
-"""
 # Sets - Exercises
 friends = {'John', 'Michael', 'Terry', 'Eric', 'Graham'}
 my_friends = {'Reg', 'Loretta', 'Colin', 'John', 'Graham'}
@@ -177,3 +176,35 @@ print(my_friends ^ friends)
 # 6. Create a new cars-list without duplicates
 cars_no_dupl = list(set(cars))
 print(cars_no_dupl)
+
+# Functions - Calling,Parameters,Args,Default
+
+
+def greeting(name, age="20", color='red'):
+    print(
+        f'Hello {name.capitalize()}, you will be {str(age+1)} years old next birthday!')
+    print(
+        f'We hear you like the color {color.lower()}!')
+
+
+name = input("Enter your name: ")
+age = int(input('Enter your age: '))
+color = input('Your color is: ')
+greeting(name, age, color)
+
+# Functions - Named Notation
+greeting(age=50, color='blue', name='Mario')
+"""
+
+# Return statements
+
+
+def value_added_tax(amount):
+    tax = amount * 0.25
+    total_amount = amount * 1.25
+    # [..., ..., ...]  or {..., ..., ...} or f"{...}, {...}, {...}"
+    return amount, tax, total_amount
+
+
+price = value_added_tax(100)
+print(price, type(price))
