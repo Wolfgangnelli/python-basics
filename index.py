@@ -288,9 +288,8 @@ if mode != False:
 else:
     print('Invalid mode!')
 
-"""
-# Conditionals - Exercise improve
 
+# Conditionals - Exercise improve
 
 def num_days(month):
     days = 31
@@ -317,3 +316,62 @@ if month == False:
     print('Invalid month')
 else:
     num_days(month)
+
+# While Loops
+index = 1
+str_num = 5
+while index <= str_num:
+    print(f'{index}.'+'*'*index+'Loops are great'+'*'*index)
+    index += 1
+"""
+
+# While Loops - Exercise
+print('******** GUESSING GAME !!! ********')
+
+win_number = 22
+is_winner = False
+attempts = 3
+i = 1
+
+
+def is_between(value):
+    return 1 <= value <= 100
+
+
+def check_num(num):
+    if num == win_number:
+        return True
+    else:
+        return False
+
+
+def tip(num):
+    if num > win_number:
+        print('Your number is too high')
+    elif num < win_number:
+        print('Your number is too low')
+
+
+while i <= attempts:
+    num = int(input(f'{i}.Attempt - Guess the number (between 1 and 100): '))
+    if is_between(num) == False and i <= 1:
+        print('WAKE UP! READ! The number must be between 1 and 100!')
+        i += 1
+    elif is_between(num) == False and i == 2:
+        print('What kind of problems do you have? READ THE INSTRUCTIONS! The number MUST be between 1 and 100 !')
+        i += 1
+    elif is_between(num) == False and i > 2:
+        print('You are banned from this game...RIP')
+        break
+    elif is_between(num) == True:
+        is_winner = check_num(num)
+        if is_winner == True:
+            print('Congraturations, you have WON!!')
+            break
+        elif is_winner == False:
+            if i == 3:
+                print('You lost... TRY AGAIN!')
+                break
+            else:
+                tip(num)
+                i += 1
