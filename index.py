@@ -207,7 +207,6 @@ def value_added_tax(amount):
 
 price = value_added_tax(100)
 print(price, type(price))
-"""
 
 # Comparisons and Booleans
 a = [3, 7, 42]
@@ -215,3 +214,106 @@ b = a
 print(id(a), id(b))
 print('o' in 'John')
 print('John' is not 'John')
+
+# Conditionals
+is_raining = False
+is_could = True
+print('Good Morning')
+if is_raining and is_could:
+    print('Bring Umbrella and jacket')
+elif is_raining and not(is_could):
+    print('Bring Umbrella')
+elif not(is_raining) and is_could:
+    print('Bring Jacket')
+elif is_raining or is_could:
+    print('Bring Umbrella or jacket')
+else:
+    print('Shirt is fine!')
+
+amount = int(input('Enter the amount: '))
+if amount <= 50:
+    print('Purchase approved')
+else:
+    print('Please enter your pin!')
+
+
+# If/Elif/Else - Exercise
+
+
+def valid_mode(mode):
+    modes = {'1', '2'}
+    if mode not in modes:
+        return False
+    else:
+        return int(mode)
+
+
+mode = valid_mode(input(
+    'Digit 1 for Math Operations or Digit 2 for Temperature Conversion (°C->°F). Enter the mode: '))
+
+
+def valid_operator(operator):
+    operators = {'-', '+', '*', '/'}
+    if operator not in operators:
+        return False
+    else:
+        return operator
+
+
+if mode != False:
+    if mode == 1:
+        operator = valid_operator(input('Enter the operator (+,-,*,/): '))
+
+        if operator == False:
+            print('Invalid Operator!')
+        else:
+            val_1 = float(input('Enter first value: '))
+            val_2 = float(input('Enter second value: '))
+
+            if operator == '+':
+                print(f'Result: {val_1+val_2}')
+            elif operator == '-':
+                print(f'Result: {val_1-val_2}')
+            elif operator == '*':
+                print(f'Result: {val_1*val_2}')
+            elif operator == '/':
+                print(f'Result: {val_1/val_2}')
+    elif mode == 2:
+        temp_celsius = float(
+            input('Enter Celsius, for float number use point (ex. 20.5): '))
+        temp_fahrenheit = (temp_celsius * 9/5) + 32
+        print(f'{temp_celsius} °C is egual to {temp_fahrenheit} °F')
+    else:
+        print('Wrong digit!')
+else:
+    print('Invalid mode!')
+
+"""
+# Conditionals - Exercise improve
+
+
+def num_days(month):
+    days = 31
+    if month in {'apr', 'jun', 'sep', 'nov'}:
+        days = 30
+    elif month == 'feb':
+        days = 28
+    print(f'number of days in {month} is {days}')
+
+
+def valid_month(value):
+    months = {'jan', 'feb', 'mar', 'apr', 'may', 'jun',
+              'jul', 'aug', 'sep', 'oct', 'nov', 'dec'}
+    if value not in months:
+        return False
+    else:
+        return value
+
+
+month = valid_month(input(
+    'Enter a shortened month (jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec): '))
+
+if month == False:
+    print('Invalid month')
+else:
+    num_days(month)
