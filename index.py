@@ -194,7 +194,6 @@ greeting(name, age, color)
 
 # Functions - Named Notation
 greeting(age=50, color='blue', name='Mario')
-"""
 
 # Return statements
 
@@ -208,3 +207,11 @@ def value_added_tax(amount):
 
 price = value_added_tax(100)
 print(price, type(price))
+"""
+
+# Comparisons and Booleans
+a = [3, 7, 42]
+b = a
+print(id(a), id(b))
+print('o' in 'John')
+print('John' is not 'John')
