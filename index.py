@@ -323,7 +323,7 @@ str_num = 5
 while index <= str_num:
     print(f'{index}.'+'*'*index+'Loops are great'+'*'*index)
     index += 1
-"""
+
 
 # While Loops - Exercise
 print('******** GUESSING GAME !!! ********')
@@ -375,3 +375,29 @@ while i <= attempts:
             else:
                 tip(num)
                 i += 1
+
+# For Loops - Nesting
+friends = ['John', 'Terry', 'Eric']
+values = [1, 2, 3]
+
+for friend in friends:
+    for value in values:
+        print(f'{value}. {friend}')
+
+else:
+    print('End of the loop!')
+"""
+
+# For Loops - Exercise - Party Invitation
+names = ['john ClEEse', 'Eric IDLE', 'michael']
+names1 = ['graHam chapman', 'TERRY', 'terry jones']
+msg = 'You are invited to the party on saturday.'
+
+names.extend(names1)
+#names += names1
+
+for val in range(2):
+    names.append(input('Enter the name of your friend: '))
+
+for name in names:
+    print(f'{name.lower().title()}! {msg}')
