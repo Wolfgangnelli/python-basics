@@ -386,7 +386,6 @@ for friend in friends:
 
 else:
     print('End of the loop!')
-"""
 
 # For Loops - Exercise - Party Invitation
 names = ['john ClEEse', 'Eric IDLE', 'michael']
@@ -401,3 +400,13 @@ for val in range(2):
 
 for name in names:
     print(f'{name.lower().title()}! {msg}')
+
+"""
+# Enumerate This!
+friends = ['Brian', 'Judith', 'Reg', 'Loretta', 'Colin']
+
+for num, friend in enumerate(friends, 1):
+    print(num, friend)
+
+for friend in enumerate(enumerate(friends, 50), -100):
+    print(friend)
