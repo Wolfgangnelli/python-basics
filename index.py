@@ -401,6 +401,7 @@ for val in range(2):
 for name in names:
     print(f'{name.lower().title()}! {msg}')
 
+
 # Enumerate This!
 friends = ['Brian', 'Judith', 'Reg', 'Loretta', 'Colin']
 
@@ -409,7 +410,8 @@ for num, friend in enumerate(friends, 1):
 
 for friend in enumerate(enumerate(friends, 50), -100):
     print(friend)
-"""
+
+
 # Sort - Sorted
 my_list = [1, 5, -3, 7, -2]
 my_dict = {'car': 4, 'dog': 2, 'add': 3, 'bee': 1}
@@ -433,3 +435,97 @@ my_string = 'python'
 my_llist = [['car', 4, 65], ['dog', 2, 30], ['bee', 1, 24]]
 #print(sorted(my_list, key=abs))
 print(sorted(my_llist, key=lambda item: item[1]))
+
+
+# Dictionaries
+movie = {
+    'title': 'Life of Brian',
+    'year': 1979,
+    'cast': ['John', 'Eric', 'Michael', 'George']
+}
+print(movie['title'])
+#print(movie.get('budget', 'Not Found'))
+movie['title'] = 'New Title'
+movie['budget'] = 250000
+print(movie['title'])
+movie.pop('budget')
+#del movie['budget']
+print(movie)
+for key, value in movie.items():
+    print(key, value)
+
+
+# Dictionaries II
+python = {'Jogn': 35, 'Eric': 36, 'Michael': 35,
+          'Terry': 38, 'Graham': 37, 'TerryG': 34}
+holy_grail = {'Arthur': 40, 'Galahad': 35,
+              'Lancelot': 39, 'Knight of NI': 40, 'Zoot': 17}
+life_of_brian = {'Brian': 33, 'Reg': 35,
+                 'Stan/Loretta': 32, 'Biccus Diccus': 45}
+
+people = {}
+people1 = {}
+people2 = {}
+# method 1 update
+people.update(python)
+people.update(holy_grail)
+people.update(life_of_brian)
+print(sorted(people.items()))
+# method 2 comprehension
+for groups in (python, holy_grail, life_of_brian):
+    people1.update(groups)
+print(sorted(people1.items()))
+# method 3 unpacking 3.5 later
+people2 = {**python, **holy_grail, **life_of_brian}
+print(sorted(people2.items()))
+print('The sum of the ages: ', sum(people.values()))
+
+"""
+
+# Dictionaries exercise
+
+# The stores
+freelancers = {'name': 'freelancing Shop', 'brian': 70, 'black knight': 20,
+               'biccus diccus': 100, 'grim reaper': 500, 'minstrel': -15}
+antiques = {'name': 'Antique Shop', 'french castle': 400,
+            'wooden grail': 3, 'scythe': 150, 'catapult': 75, 'german joke': 5}
+pet_shop = {'name': 'Pet Shop', 'blue parrot': 10,
+            'white rabbit': 5, 'newt': 2}
+
+
+def show_list_items(shops):
+    i = 0
+    list_items = {}
+    for name, value in shops.items():
+        if i == 0:
+            i += 1
+            continue
+        else:
+            list_items.update({name: value})
+            i += 1
+    return list_items
+
+
+def list_to_string(s):
+    return (", ".join(s))
+
+
+cart = {}
+valid_input = True
+for shop in (freelancers, antiques, pet_shop):
+    items = show_list_items(shop)
+    buy_item = input(
+        f'Welcome to {shop["name"]}! What do you want to buy {items}: ').lower()
+    if buy_item not in shop.keys():
+        print('Enter a valid item!')
+        valid_input = False
+        break
+    else:
+        item_value = shop.pop(buy_item)
+        cart.update({buy_item.capitalize(): item_value})
+        print(f'In Cart: {cart}')
+if valid_input == True:
+    print(
+        f'You Purchased {list_to_string(list(cart.keys()))}. Today it is all free. Have a nice day of mayhem!')
+else:
+    print('Repeat the shopping!')
