@@ -492,6 +492,15 @@ antiques = {'name': 'Antique Shop', 'french castle': 400,
 pet_shop = {'name': 'Pet Shop', 'blue parrot': 10,
             'white rabbit': 5, 'newt': 2}
 
+# Initial inventory
+department_store = {}
+for department in (freelancers, antiques, pet_shop):
+    department_store.update(department)
+
+department_store.pop('name')
+print(f'Initial inventory of stores: {sorted(department_store.items())}')
+print('--------------------')
+
 def show_list_items(shops):
     i = 0
     list_items = {}
@@ -538,7 +547,7 @@ for shop in (freelancers, antiques, pet_shop):
     elif buy_item not in shop.keys():
         print('Enter a valid item!')
         valid_input = False
-        break
+        continue
     else:
         item_value = shop[buy_item]
         money_available = check_money(item_value)
@@ -549,5 +558,8 @@ for shop in (freelancers, antiques, pet_shop):
 if valid_input == True:
     print(
         f'You Purchased {list_to_string(list(cart.keys()))}. PAYMENTS: {get_costs()}, BALANCE: {get_money()}. Have a nice day of mayhem!')
-else:
-    print('Repeat the shopping!')
+
+print('--------------------')
+department_store_final = {**freelancers,**antiques, **pet_shop}
+department_store_final.pop('name')
+print(f'Final Inventory of stores: {sorted(department_store_final.items())}')
