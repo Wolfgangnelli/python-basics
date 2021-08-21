@@ -492,7 +492,6 @@ antiques = {'name': 'Antique Shop', 'french castle': 400,
 pet_shop = {'name': 'Pet Shop', 'blue parrot': 10,
             'white rabbit': 5, 'newt': 2}
 
-
 def show_list_items(shops):
     i = 0
     list_items = {}
@@ -509,23 +508,46 @@ def show_list_items(shops):
 def list_to_string(s):
     return (", ".join(s))
 
+costs = []
+def set_costs(cost):
+    costs.append(cost)
+
+def get_costs():
+    return sum(costs)
+
+def get_money():
+    my_money = 1000
+    my_money -= sum(costs)
+    return my_money
+
+def check_money(cost):
+    have_money = get_money() >= cost
+    if have_money == True:
+        set_costs(cost)     
+    return have_money
+
 
 cart = {}
 valid_input = True
 for shop in (freelancers, antiques, pet_shop):
     items = show_list_items(shop)
     buy_item = input(
-        f'Welcome to {shop["name"]}! What do you want to buy {items}: ').lower()
-    if buy_item not in shop.keys():
+        f'Welcome to {shop["name"]}! What do you want to buy {items}, or digit "exit": ').lower()
+    if buy_item == 'exit':
+        continue
+    elif buy_item not in shop.keys():
         print('Enter a valid item!')
         valid_input = False
         break
     else:
-        item_value = shop.pop(buy_item)
-        cart.update({buy_item.capitalize(): item_value})
-        print(f'In Cart: {cart}')
+        item_value = shop[buy_item]
+        money_available = check_money(item_value)
+        if money_available == True:
+            shop.pop(buy_item)
+            cart.update({buy_item.capitalize(): item_value})
+            print(f'In Cart: {list(cart.keys())}. Total costs: {get_costs()} gold pieces. You have {get_money()} gold pieces yet.')
 if valid_input == True:
     print(
-        f'You Purchased {list_to_string(list(cart.keys()))}. Today it is all free. Have a nice day of mayhem!')
+        f'You Purchased {list_to_string(list(cart.keys()))}. PAYMENTS: {get_costs()}, BALANCE: {get_money()}. Have a nice day of mayhem!')
 else:
     print('Repeat the shopping!')
