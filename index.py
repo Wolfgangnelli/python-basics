@@ -745,11 +745,8 @@ print(g(2))
 signups = ['MPF104', 'MPF20', 'MPF2', 'MPF17', 'MPF3', 'MPF45']
 print(sorted(signups))  # Lexicographic sort
 print(sorted(signups, key=lambda id: int(id[3:])))  # Integer sort
-"""
 
 # 6
-
-
 class Player:
     def __init__(self, name, score):
         self.name = name
@@ -762,5 +759,33 @@ Terry = Player('Terry', 150000)
 player_list = [Eric, John, Terry]
 
 player_list.sort(key=lambda player: player.score, reverse=True)
-
 print([player.name for player in player_list])
+"""
+
+# Comprehensions - Lists
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# give me a list with num squared for each num in numbers
+new_list = []
+for num in numbers:
+    new_list.append(num**2)
+print(new_list)
+
+new_list = [num*num for num in numbers]  # short hand
+print(new_list)
+
+# give me a list with num for each num in numbers if num is even
+new_list = [num for num in numbers if num % 2 == 0]
+print(new_list)
+
+new_list = list(filter(lambda num: num % 2 == 0, numbers))
+print(new_list)
+
+# I want a (letter, num) pair for each letter in 'spam' and each number in '0123'
+new_list = []
+for letter in 'spam':
+    for num in range(4):
+        new_list.append((letter, num))
+print(new_list)
+
+new_list = [(letter, num) for letter in 'spam' for num in range(4)]
+print(new_list)
