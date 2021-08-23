@@ -684,7 +684,6 @@ monty_python = ['John Marwood Cleese', 'Eric Idle', 'Michael Edward Palin',
 
 monty_python.sort(key=lambda name: name.split(' '))
 print(monty_python)
-"""
 
 # Lambda Functions part 2
 
@@ -709,3 +708,59 @@ print(price_calc(1, 25)(2))
 
 print((lambda a, b, c: a+b+c)(2, 3, 4))
 print((lambda *args: sum(args))(2, 3, 4, 50))
+
+# Lambda Functions - Exercise
+
+# 1
+def f(x): return x + 5
+# f = lambda x: x + 5
+print(f(2))
+
+# 2
+def strip_spaces1(str): return ''.join(str.split(' '))
+# strip_spaces1 = lambda str: ''.join(str.split(' '))
+print(strip_spaces1('Monty Pythons Flying Circus'))
+
+# 3
+# join_list_no_duplicates = lambda list_a,list_b: list(set(list_a + list_b))
+def join_list_no_duplicates(list_a, list_b):
+    return list(set(list_a+list_b))
+
+list_a = [1, 2, 3, 4]
+list_b = [3, 4, 5, 6, 7]
+print(join_list_no_duplicates(list_a, list_b))
+
+
+# 4
+def create_quad_fun(a, b, c):
+    return lambda x: a*x**2 + b*x + c
+
+
+f = create_quad_fun(2, 4, 6)
+g = create_quad_fun(3, 5, 7)
+print(f(2))
+print(g(2))
+
+# 5
+signups = ['MPF104', 'MPF20', 'MPF2', 'MPF17', 'MPF3', 'MPF45']
+print(sorted(signups))  # Lexicographic sort
+print(sorted(signups, key=lambda id: int(id[3:])))  # Integer sort
+"""
+
+# 6
+
+
+class Player:
+    def __init__(self, name, score):
+        self.name = name
+        self.score = score
+
+
+Eric = Player('Eric', 116700)
+John = Player('John', 24327)
+Terry = Player('Terry', 150000)
+player_list = [Eric, John, Terry]
+
+player_list.sort(key=lambda player: player.score, reverse=True)
+
+print([player.name for player in player_list])
