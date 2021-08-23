@@ -638,10 +638,40 @@ class Wizard(Doctor, Fighter):
 character_1 = Wizard()
 character_1.move()
 
-"""
 
 # Modules
+
 # import platform as pl
 from platform import python_version as pv
 
 print(pv())
+
+
+# Zip / Unzip
+
+nums = [1, 2, 3, 4]
+letters = ['a', 'b', 'c', 'd']
+names = ['John', 'Eric', 'Michael', 'Graham', 'Joe']
+
+# zip (packing)
+combo = list(zip(nums, letters, names))
+print(combo)
+
+# unzip (unpacking)
+num, let, nam = zip(*combo)
+print(num, let, nam)
+
+"""
+keys = 'this parrot is deceased'
+values = 'denna papegoian ar avliden'
+keys = keys.split()
+values = values.split()
+print(keys, values)
+en_sv_dict = dict(zip(keys, values))
+print(en_sv_dict)
+new_dict = {key: value for key, value in zip(keys, values)}
+print(new_dict)
+en, sv = list(en_sv_dict.keys()), list(en_sv_dict.values())
+print(en, sv)
+en_1, sv_1 = zip(*en_sv_dict.items())
+print(en_1, sv_1)
