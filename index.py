@@ -675,7 +675,6 @@ print(en, sv)
 en_1, sv_1 = zip(*en_sv_dict.items())
 print(en_1, sv_1)
 
-"""
 
 
 # Lambda Functions part 1
@@ -685,3 +684,28 @@ monty_python = ['John Marwood Cleese', 'Eric Idle', 'Michael Edward Palin',
 
 monty_python.sort(key=lambda name: name.split(' '))
 print(monty_python)
+"""
+
+# Lambda Functions part 2
+
+
+def func(n):
+    return lambda a: a*n
+
+
+func2 = func(5)
+print(func2(5))
+
+
+def price_calc(start, hourly_rate):
+    return lambda hours: start + hourly_rate * hours
+
+
+walkin_cost = price_calc(10, 30)
+premiun_cost = price_calc(1, 25)
+print(walkin_cost(2))
+print(premiun_cost(2))
+print(price_calc(1, 25)(2))
+
+print((lambda a, b, c: a+b+c)(2, 3, 4))
+print((lambda *args: sum(args))(2, 3, 4, 50))
