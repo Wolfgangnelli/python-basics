@@ -661,7 +661,6 @@ print(combo)
 num, let, nam = zip(*combo)
 print(num, let, nam)
 
-"""
 keys = 'this parrot is deceased'
 values = 'denna papegoian ar avliden'
 keys = keys.split()
@@ -675,3 +674,14 @@ en, sv = list(en_sv_dict.keys()), list(en_sv_dict.values())
 print(en, sv)
 en_1, sv_1 = zip(*en_sv_dict.items())
 print(en_1, sv_1)
+
+"""
+
+
+# Lambda Functions part 1
+
+monty_python = ['John Marwood Cleese', 'Eric Idle', 'Michael Edward Palin',
+                'Terrence Vance Gilliam', 'Terry Graham Perry Jones', 'Graham Arthur Chapman']
+
+monty_python.sort(key=lambda name: name.split(' '))
+print(monty_python)
