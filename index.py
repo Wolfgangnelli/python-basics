@@ -760,7 +760,6 @@ player_list = [Eric, John, Terry]
 
 player_list.sort(key=lambda player: player.score, reverse=True)
 print([player.name for player in player_list])
-"""
 
 # Comprehensions - Lists
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -789,3 +788,25 @@ print(new_list)
 
 new_list = [(letter, num) for letter in 'spam' for num in range(4)]
 print(new_list)
+"""
+
+# Comprehensions - Dictionary
+movies = ["And Now for Something Completely Different", "Monty Python and the Holy Grail", "Monty Python's Life of Brian",
+          "Monty Python Live at the Hollywood Bowl", "Monty Python's The Meaning of Life", "Monty Python Live (Mostly)"]
+year = [1971, 1975, 1979, 1982, 1983, 2014]
+names = ['John', 'Eric', 'Michael', 'Graham', 'Terry', 'TerryG']
+#print(list(zip(movies, year)))
+# give me a dict('movies': year) for each movies, year in zip(movies, year)
+new_dict = dict()
+for movie, yr in zip(movies, year):
+    new_dict[movie] = yr
+# print(new_dict)
+new_dict = {combo[0]: combo[1] for combo in list(zip(movies, year))}
+# print(new_dict)
+new_dict = {movie: yr for movie, yr in zip(
+    movies, year) if yr < 1983 and movie.startswith('Monty')}
+# print(new_dict)
+
+n_1 = [[f"{name}'s favorite movie was '{movie}' from {str(yr)}"]
+       for name, movie, yr in zip(names, movies, year) if yr < 1981]
+print(n_1)
