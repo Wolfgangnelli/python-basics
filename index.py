@@ -602,7 +602,6 @@ class Movie:
 
 movie_1 = Movie('Transformer', 2007, 8.2, True)
 movie_1.movie_card()
-"""
 
 
 # Inheritance
@@ -638,3 +637,11 @@ class Wizard(Doctor, Fighter):
 
 character_1 = Wizard()
 character_1.move()
+
+"""
+
+# Modules
+# import platform as pl
+from platform import python_version as pv
+
+print(pv())
