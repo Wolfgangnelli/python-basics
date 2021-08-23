@@ -480,7 +480,6 @@ people2 = {**python, **holy_grail, **life_of_brian}
 print(sorted(people2.items()))
 print('The sum of the ages: ', sum(people.values()))
 
-"""
 
 # Dictionaries exercise
 
@@ -563,3 +562,22 @@ print('--------------------')
 department_store_final = {**freelancers,**antiques, **pet_shop}
 department_store_final.pop('name')
 print(f'Final Inventory of stores: {sorted(department_store_final.items())}')
+"""
+
+# Exceptions: Try/Except, Raise
+
+try:
+    num = int(input('Enter a number between 1 and 30: '))
+    num1 = 30/num
+    if num > 30 or num < 1:
+        raise ValueError(num)
+except ZeroDivisionError as err:
+    print(err, 'You can\'t divide by Zero!')
+except ValueError as err:
+    print(err, 'The value must be an integer and between 1 and 30!')
+except:
+    print('Invalid Input!')
+else:
+    print(f'30 divided by {num} is: {30/num}')
+finally:
+    print('**Thank you for playing!**')
