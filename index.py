@@ -562,7 +562,6 @@ print('--------------------')
 department_store_final = {**freelancers,**antiques, **pet_shop}
 department_store_final.pop('name')
 print(f'Final Inventory of stores: {sorted(department_store_final.items())}')
-"""
 
 # Exceptions: Try/Except, Raise
 
@@ -581,3 +580,25 @@ else:
     print(f'30 divided by {num} is: {30/num}')
 finally:
     print('**Thank you for playing!**')
+"""
+
+
+# Classes & Objects
+
+class Movie:
+
+    def __init__(self, title, year, imbd_score, have_seen):
+        self.title = title
+        self.year = year
+        self.imbd_score = imbd_score
+        self.have_seen = have_seen
+
+    def movie_card(self):
+        print(f'Title: {self.title}')
+        print(f'Year of production: {self.year}')
+        print(f'IMDB Score: {self.imbd_score}')
+        print(f'I have seen it: {self.have_seen}')
+
+
+movie_1 = Movie('Transformer', 2007, 8.2, True)
+movie_1.movie_card()
