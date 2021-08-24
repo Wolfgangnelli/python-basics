@@ -837,7 +837,6 @@ word1 = ''.join(random.sample(letters_numbers, 12))
 word = ''.join(random.choices(letters_numbers, k=12))
 print(code, word1, word)
 
-"""
 
 # Timeit and performance
 import timeit
@@ -872,3 +871,36 @@ def test3():
 print(timeit.timeit('test1()', globals=globals(), number=10))
 print(timeit.timeit('test2()', globals=globals(), number=10))
 print(timeit.timeit('test3()', globals=globals(), number=10))
+"""
+
+
+# Project - Crypto machine
+print('Project - Crypto')
+
+
+def enigma_ligth():
+    # create keys string
+    keys = 'abcdefghijklmnopqrstuvwxyz !'
+# autogenerate the values string by offsetting original string
+    values = keys[-1] + keys[0:-1]
+# create two dictionaries
+    dict_e = dict(zip(keys, values))
+    dict_d = dict(zip(values, keys))
+# OR create 1 and then flip
+    #dict_e = dict(zip(keys, values))
+    #dict_d = {value:key for key, value in dict_e.items()}
+# user input 'the message' and mode
+    msg = input('Enter the message: ')
+    mode = input('Crypto mode: encode (e) OR decrypt as default: ')
+# run encode or decode
+    if mode.lower() == 'e':
+        new_msg = [dict_e[letter] for letter in msg.lower()]
+    else:
+        new_msg = [dict_d[letter] for letter in msg.lower()]
+# return result
+
+    return ''.join(new_msg).capitalize()
+# clean and beautify the code
+
+
+print(enigma_ligth())
