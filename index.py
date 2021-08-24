@@ -788,7 +788,8 @@ print(new_list)
 
 new_list = [(letter, num) for letter in 'spam' for num in range(4)]
 print(new_list)
-"""
+
+
 
 # Comprehensions - Dictionary
 movies = ["And Now for Something Completely Different", "Monty Python and the Holy Grail", "Monty Python's Life of Brian",
@@ -810,3 +811,29 @@ new_dict = {movie: yr for movie, yr in zip(
 n_1 = [[f"{name}'s favorite movie was '{movie}' from {str(yr)}"]
        for name, movie, yr in zip(names, movies, year) if yr < 1981]
 print(n_1)
+
+"""
+
+# Randomness
+import random
+import string
+# for i in range(5):
+#   print(random.random())
+
+friends_list = ['John', 'Eric', 'Michael', 'Terry', 'Graham']
+# print(random.choice(friends_list))
+# print(random.sample(friends_list, 2))
+
+smallcaps = 'abcdefghijklmnopqrstuvwxyz'
+largecaps = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+digits = '0123456789'
+
+letters_numbers = string.ascii_letters + string.digits
+print(letters_numbers)
+# generate a secret code
+code = ''
+for i in range(12):
+    code += random.choice(letters_numbers)
+word1 = ''.join(random.sample(letters_numbers, 12))
+word = ''.join(random.choices(letters_numbers, k=12))
+print(code, word1, word)
