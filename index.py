@@ -393,7 +393,7 @@ names1 = ['graHam chapman', 'TERRY', 'terry jones']
 msg = 'You are invited to the party on saturday.'
 
 names.extend(names1)
-#names += names1
+# names += names1
 
 for val in range(2):
     names.append(input('Enter the name of your friend: '))
@@ -418,22 +418,22 @@ my_dict = {'car': 4, 'dog': 2, 'add': 3, 'bee': 1}
 my_tuple = ('d', 'c', 'e', 'a', 'b')
 my_string = 'python'
 
-#print(my_list, 'original')
+# print(my_list, 'original')
 # print(my_list.sort())
 # print(sorted(my_list))
-#print(my_list, 'new')
+# print(my_list, 'new')
 
-#print(my_dict, 'original')
-#print(sorted(my_dict.values(), reverse=True))
-#print(my_dict, 'new')
+# print(my_dict, 'original')
+# print(sorted(my_dict.values(), reverse=True))
+# print(my_dict, 'new')
 
-#print(my_list, 'original')
+# print(my_list, 'original')
 # print(list(reversed(my_list)))
-#print(my_list, 'new')
+# print(my_list, 'new')
 # print(my_list[::1])  # copy
 # print(my_list[::-1])  # reverse copy
 my_llist = [['car', 4, 65], ['dog', 2, 30], ['bee', 1, 24]]
-#print(sorted(my_list, key=abs))
+# print(sorted(my_list, key=abs))
 print(sorted(my_llist, key=lambda item: item[1]))
 
 
@@ -444,12 +444,12 @@ movie = {
     'cast': ['John', 'Eric', 'Michael', 'George']
 }
 print(movie['title'])
-#print(movie.get('budget', 'Not Found'))
+# print(movie.get('budget', 'Not Found'))
 movie['title'] = 'New Title'
 movie['budget'] = 250000
 print(movie['title'])
 movie.pop('budget')
-#del movie['budget']
+# del movie['budget']
 print(movie)
 for key, value in movie.items():
     print(key, value)
@@ -531,7 +531,7 @@ def get_money():
 def check_money(cost):
     have_money = get_money() >= cost
     if have_money == True:
-        set_costs(cost)     
+        set_costs(cost)
     return have_money
 
 
@@ -553,7 +553,8 @@ for shop in (freelancers, antiques, pet_shop):
         if money_available == True:
             shop.pop(buy_item)
             cart.update({buy_item.capitalize(): item_value})
-            print(f'In Cart: {list(cart.keys())}. Total costs: {get_costs()} gold pieces. You have {get_money()} gold pieces yet.')
+            print(
+                f'In Cart: {list(cart.keys())}. Total costs: {get_costs()} gold pieces. You have {get_money()} gold pieces yet.')
 if valid_input == True:
     print(
         f'You Purchased {list_to_string(list(cart.keys()))}. PAYMENTS: {get_costs()}, BALANCE: {get_money()}. Have a nice day of mayhem!')
@@ -796,7 +797,7 @@ movies = ["And Now for Something Completely Different", "Monty Python and the Ho
           "Monty Python Live at the Hollywood Bowl", "Monty Python's The Meaning of Life", "Monty Python Live (Mostly)"]
 year = [1971, 1975, 1979, 1982, 1983, 2014]
 names = ['John', 'Eric', 'Michael', 'Graham', 'Terry', 'TerryG']
-#print(list(zip(movies, year)))
+# print(list(zip(movies, year)))
 # give me a dict('movies': year) for each movies, year in zip(movies, year)
 new_dict = dict()
 for movie, yr in zip(movies, year):
@@ -871,7 +872,6 @@ def test3():
 print(timeit.timeit('test1()', globals=globals(), number=10))
 print(timeit.timeit('test2()', globals=globals(), number=10))
 print(timeit.timeit('test3()', globals=globals(), number=10))
-"""
 
 
 # Project - Crypto machine
@@ -887,8 +887,8 @@ def enigma_ligth():
     dict_e = dict(zip(keys, values))
     dict_d = dict(zip(values, keys))
 # OR create 1 and then flip
-    #dict_e = dict(zip(keys, values))
-    #dict_d = {value:key for key, value in dict_e.items()}
+    # dict_e = dict(zip(keys, values))
+    # dict_d = {value:key for key, value in dict_e.items()}
 # user input 'the message' and mode
     msg = input('Enter the message: ')
     mode = input('Crypto mode: encode (e) OR decrypt as default: ')
@@ -904,3 +904,105 @@ def enigma_ligth():
 
 
 print(enigma_ligth())
+
+"""
+# Project Math Tutor
+import random
+import datetime
+
+questions = []
+answers = []
+score = 0
+times = []
+
+
+def get_time_question(num):
+    time = times[num][1] - times[num][0]
+    return time
+
+
+def time_each_question():
+    for question in range(len(questions)):
+        print(f'Time for {questions[question]}: {get_time_question(question)}')
+
+
+def total_time():
+    min_sec = []
+    tot_min = 0
+    tot_sec = 0
+    for time in times:
+        diff = time[1] - time[0]
+        minutes = divmod(diff.seconds, 60)
+        min_sec.append((minutes[0], minutes[1]))
+    for val in min_sec:
+        tot_min += val[0]
+        tot_sec += val[1]
+    if tot_sec >= 60:
+        ms = tot_sec/60
+        new_sec = ms % 1
+        new_min = ms // 1
+        tot_min += new_min
+        tot_sec = new_sec
+    print(f'Min: {tot_min}, Sec: {tot_sec}')
+
+
+number_practice_questions = int(
+    input('Enter the number of random practice questions: '))
+max_n = int(input('Enter the max number used in practice: '))
+for question in range(number_practice_questions):
+    num1 = random.choice(range(1, max_n+1))
+    num2 = random.choice(range(1, max_n+1))
+    questions.append(f'{num1} * {num2}')
+    time_start = datetime.datetime.now()
+    answer = input(f'{num1} x {num2} = ')
+    if len(answer) > 0:
+        time_stop = datetime.datetime.now()  # .strftime("%X")
+        times.append((time_start, time_stop))
+    answers.append(int(answer))
+    correct_answer = num1*num2
+    if int(answer) == correct_answer:
+        score += 1
+print(
+    'Thanks for playing with Multiplication tables! \nCorrect answer: {score} \nTotal answer: {number_practice_questions}')
+print(f'% of correct answer: {round(score/number_practice_questions)*100}%')
+print('Time for each question: ')
+time_each_question()
+print(f'Total time for all questions: ')
+total_time()
+i = 0
+for q in questions:
+    print(f'{q} = {answers[i]}')
+    i += 1
+
+'''
+# COME LO HA FATTO LUI
+
+# import modules
+# ask how many questions user wants
+from random import randrange as r
+from time import time as t
+no_questions = int(input("How many questions do you want?: "))
+max_num = int(input('Highest number used in practice?: '))
+
+# set score start at zero
+score = 0
+answer_list = []
+# loop through number of questions
+start = t()
+for q in range(no_questions):
+    # create two random numbers and calc answer
+    num1, num2 = r(1, max_num+1), r(1, max_num+1)
+    ans = num1*num2
+# show user the question
+# capture answer and modify user score
+    u_ans = int(input(f'{num1} x {num2} = '))
+    answer_list.append(f'{num1} x {num2} = {ans} you:{u_ans}')
+    if u_ans == ans:
+        score += 1
+    end = t()
+# output final score
+print(
+    f'Thank you for playing! \nYou got {score} out of {no_questions} ({round(score/no_questions)*100}%) correct in {round(end-start,1)} seconds ({round((end-start)/no_questions,1)} seconds/question)')
+for a in answer_list:
+    print(a)
+'''
