@@ -905,7 +905,9 @@ def enigma_ligth():
 
 print(enigma_ligth())
 
-"""
+
+
+
 # Project Math Tutor
 import random
 import datetime
@@ -1005,4 +1007,90 @@ print(
     f'Thank you for playing! \nYou got {score} out of {no_questions} ({round(score/no_questions)*100}%) correct in {round(end-start,1)} seconds ({round((end-start)/no_questions,1)} seconds/question)')
 for a in answer_list:
     print(a)
+'''
+
+"""
+
+# Project - Marble/Trading game
+
+import random
+
+green_marbles_bag = []
+red_marbles_bag = []
+money = 1000
+start_rounds = 1
+
+for num in range(1, 6):
+    green_marbles_bag.append(f'green_{num}')
+
+for num in range(1, 4):
+    red_marbles_bag.append(f'red_{num}')
+
+marbles_bag = ['black_10', 'white_5']
+marbles_bag.extend(green_marbles_bag)
+marbles_bag.extend(red_marbles_bag)
+
+print('Welcome to Trading Game Simulation \nYour budget is 1000$ !')
+total_rounds = random.randrange(start_rounds+1, 10)
+for round in range(start_rounds, total_rounds+1):
+    bet = int(input(f'Current Money: {money}$. How much you will bet?: '))
+    if bet <= money and money > money/2:
+        murble = random.choice(marbles_bag)
+        murble_split = murble.split('_')
+        if murble_split[0] == 'green':
+            print(f'You have draw {murble}! You have WON {bet}$')
+            money += bet
+        elif murble_split[0] == 'red':
+            print(f'You have draw {murble}. You have LOSE {bet}$')
+            money -= bet
+        elif murble_split[0] == 'black':
+            print(
+                f'WOW! You have draw {murble}. You have WON {murble_split[1]} x {bet} = {bet*10}$')
+            money += bet*10
+        elif murble_split[0] == 'white':
+            print(
+                f'OH NO! sYou have draw {murble}. You have LOSE {murble_split[1]} x {bet} = -{bet*5}$')
+            money -= bet*5
+    elif bet > money and money > money/2:
+        print(f'You don\'t bet {bet}$, your remained budget is {money}$')
+        continue
+    elif money < money/2:
+        print('Sorry! You have lose half of your money... Game is over!')
+        break
+    print(f'Round number: {round}/{total_rounds} \nMoney: {money}$')
+
+
+# COME LO HA FATTO LUI
+'''
+bag = ('green', 'green', 'green', 'green', 'green',
+       'green', 'red', 'red', 'red', 'red')
+start_purse = 1000
+purse = start_purse
+result = 0
+rounds = 3
+marble = 'none'
+
+print(f'You start the game with {start_purse} gold pieces')
+
+for draw in range(1, rounds+1):
+    bet = int(input(
+        f'Current Purse: {purse} Last draw: {marble} \nRound {draw} - How much do you want to bet?: '))
+    marble = random.choice(bag)
+    if marble == 'green':
+        result = bet
+    elif marble == 'black':
+        result = 10 * bet
+    elif marble == 'white':
+        result = -5 * bet
+    else:
+        result = -bet
+
+    purse += result
+    if purse < (0.5 * start_purse):
+        print(f'Game over! You lost to much gold!!')
+        break
+    print(f'purse: {purse}, last result: ({marble}): {result}')
+    print('')
+print('starting/ending purse: ', start_purse, '/', purse)
+print('gain/loss: ', ((purse-start_purse)/start_purse*100), '%')
 '''
