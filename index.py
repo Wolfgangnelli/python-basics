@@ -1009,7 +1009,6 @@ for a in answer_list:
     print(a)
 '''
 
-"""
 
 # Project - Marble/Trading game
 
@@ -1094,3 +1093,75 @@ for draw in range(1, rounds+1):
 print('starting/ending purse: ', start_purse, '/', purse)
 print('gain/loss: ', ((purse-start_purse)/start_purse*100), '%')
 '''
+
+"""
+
+# Project Euler Q4 - Palindromes
+import time
+
+
+def is_palindrome(val):
+    val = str(val)
+    if val == val[::-1]:
+        return True
+    else:
+        return False
+# def is_palindrome(val):
+#    return str(val) == str(val)[::-1]
+
+
+def palindrome():
+    start_time = time.time()
+    palindromes_list = []
+    debug_list = []
+    low_val = 900
+    high_val = 999
+    interations = 0
+
+    for num1 in range(low_val, high_val):
+        for num2 in range(low_val, high_val):
+            interations += 1
+            if is_palindrome(num1*num2):
+                palindromes_list.append(num1*num2)
+                debug_list.append([num1, num2, num1*num2])
+            if num1 == num2:
+                break
+    print('print of palindromes: ', palindromes_list, num1, num2)
+    print('debug_list: ', debug_list)
+    print('Interations: ', interations)
+    print('Largest palindrome: ', max(palindromes_list))
+    print('Runtime: ', time.time()-start_time)
+    print('-----------------End Run----------------')
+
+
+def palindrome_back():
+    start_time = time.time()
+    palindromes_list = []
+    debug_list = []
+    low_val = 900
+    high_val = 999
+    interations = 0
+    low_num2_val = 900
+
+    for num1 in range(high_val, low_val, -1):
+        if num1 < low_val:
+            break
+        for num2 in range(high_val, low_num2_val, -1):
+            interations += 1
+            if is_palindrome(num1*num2):
+                palindromes_list.append(num1*num2)
+                low_val = max((num1*num2)/high_val, low_val)
+                low_num2_val = num2
+                debug_list.append([num1, num2, (num1*num2)/high_val, low_val])
+            if num1 == num2:
+                break
+    print('print of palindromes: ', palindromes_list, num1, num2)
+    print('debug_list: ', debug_list)
+    print('Interations: ', interations)
+    print('Largest palindrome: ', max(palindromes_list))
+    print('Runtime: ', time.time()-start_time)
+    print('-----------------End Run----------------')
+
+
+palindrome()
+palindrome_back()
