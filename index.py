@@ -1201,13 +1201,10 @@ arr = [3, 7, 9, 5]
 print(histogram(arr))
 istogramma(arr)
 
-"""
 
 # A ciascuno il suo
 
 # versione 1
-
-
 def char_counter(str_list):
     num_list = []
     for item in str_list:
@@ -1215,8 +1212,6 @@ def char_counter(str_list):
     return num_list
 
 # version 2
-
-
 def char_counter_pro(str_list):
     return [len(item) for item in str_list]
 
@@ -1224,3 +1219,21 @@ def char_counter_pro(str_list):
 list_str = ['minni', 'bell', 'bebidina']
 print(char_counter(list_str))
 print(char_counter_pro(list_str))
+
+"""
+
+# Frequency Meter
+
+
+def frequency_meter(string):
+    frequency_dict = {}
+    for letter in string:
+        if letter in frequency_dict:
+            # frequency_dict[letter] += 1
+            frequency_dict.update({letter: frequency_dict[letter]+1})
+        else:
+            frequency_dict[letter] = 1
+    return frequency_dict
+
+
+print(frequency_meter('ababcc'))
