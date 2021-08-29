@@ -1165,7 +1165,6 @@ def palindrome_back():
 palindrome()
 palindrome_back()
 
-"""
 
 
 # Scrivi la tua versione di len()
@@ -1178,3 +1177,30 @@ def my_len(str_or_lst):
 
 
 print(my_len('test my len'))
+
+"""
+
+# Histograms Generator
+
+# version 1
+
+
+def histogram(num_lst):
+    output = ""
+    for item in num_lst:
+        for num in range(item):
+            output += '*'
+        output += '\n'
+    return output
+
+# verion 2
+
+
+def istogramma(list):
+    for num in list:
+        print('*'*num)
+
+
+arr = [3, 7, 9, 5]
+print(histogram(arr))
+istogramma(arr)
