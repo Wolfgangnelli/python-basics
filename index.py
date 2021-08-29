@@ -1220,7 +1220,6 @@ list_str = ['minni', 'bell', 'bebidina']
 print(char_counter(list_str))
 print(char_counter_pro(list_str))
 
-"""
 
 # Frequency Meter
 
@@ -1237,3 +1236,18 @@ def frequency_meter(string):
 
 
 print(frequency_meter('ababcc'))
+
+"""
+
+# Only Members
+
+
+def only_members(item, items_list):
+    msg = f"No {item} isn't in the list"
+    if item.capitalize() in items_list:
+        msg = f'Yes {item} is in the list and his index is {items_list.index(item)}'
+    return print(msg)
+
+
+list_itm = ['Marco', 'Franco', 'Andrea', 'Mario', 'Alessandro']
+only_members('Mario', list_itm)
