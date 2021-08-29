@@ -1094,7 +1094,6 @@ print('starting/ending purse: ', start_purse, '/', purse)
 print('gain/loss: ', ((purse-start_purse)/start_purse*100), '%')
 '''
 
-"""
 
 # Project Euler Q4 - Palindromes
 import time
@@ -1165,3 +1164,17 @@ def palindrome_back():
 
 palindrome()
 palindrome_back()
+
+"""
+
+
+# Scrivi la tua versione di len()
+
+def my_len(str_or_lst):
+    length = 0
+    for unit in str_or_lst:
+        length += 1
+    return length
+
+
+print(my_len('test my len'))
