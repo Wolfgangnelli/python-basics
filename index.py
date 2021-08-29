@@ -1178,13 +1178,11 @@ def my_len(str_or_lst):
 
 print(my_len('test my len'))
 
-"""
+
 
 # Histograms Generator
 
 # version 1
-
-
 def histogram(num_lst):
     output = ""
     for item in num_lst:
@@ -1194,8 +1192,6 @@ def histogram(num_lst):
     return output
 
 # verion 2
-
-
 def istogramma(list):
     for num in list:
         print('*'*num)
@@ -1204,3 +1200,27 @@ def istogramma(list):
 arr = [3, 7, 9, 5]
 print(histogram(arr))
 istogramma(arr)
+
+"""
+
+# A ciascuno il suo
+
+# versione 1
+
+
+def char_counter(str_list):
+    num_list = []
+    for item in str_list:
+        num_list.append(len(item))
+    return num_list
+
+# version 2
+
+
+def char_counter_pro(str_list):
+    return [len(item) for item in str_list]
+
+
+list_str = ['minni', 'bell', 'bebidina']
+print(char_counter(list_str))
+print(char_counter_pro(list_str))
