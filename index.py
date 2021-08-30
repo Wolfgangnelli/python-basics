@@ -1237,7 +1237,6 @@ def frequency_meter(string):
 
 print(frequency_meter('ababcc'))
 
-"""
 
 # Only Members
 
@@ -1251,3 +1250,28 @@ def only_members(item, items_list):
 
 list_itm = ['Marco', 'Franco', 'Andrea', 'Mario', 'Alessandro']
 only_members('Mario', list_itm)
+"""
+
+
+# Il linguaggio dei furfanti n.14
+
+def traduttore():
+    print('Ciao! Questo programma traduce un testo passato in "rovarspraket".\nSignifica che raddoppia ogni consonante delle parole e ci mette una "o" in mezzo...')
+    consonants = 'b,c,d,f,g,h,l,m,n,p,q,r,s,t,v,z'
+
+    while True:
+        new_phrase = ''
+        text = str(input('Inserisci il testo che vuoi tradurre: '))
+
+        for letter in text:
+            if letter in consonants:
+                new_phrase += letter+'o'+letter
+            else:
+                new_phrase += letter
+        print(f'Frase tradotta: {new_phrase}')
+
+        if str(input('\nVuoi tradurre un\'altra frase (y/n)? ')) == 'n':
+            break
+
+
+traduttore()
