@@ -1302,7 +1302,7 @@ def calc_area(figure):
 fig = input(
     'Di quale figura vuoi calcolare l\'area? (cerchio, quadrato, rettangolo, triangolo): ')
 calc_area(fig.lower())
-"""
+
 
 # L'Americana
 
@@ -1325,3 +1325,18 @@ def converter():
 
 
 converter()
+
+"""
+
+# The lord of time
+
+
+def lord_of_time():
+    print('Hey! This function convert days, hours and minutes in seconds!')
+    from_days = int(input('Number of days: ')) * 24 * 3600
+    from_hours = int(input('Number of hours: ')) * 3600
+    from_minutes = int(input('Number of minutes: ')) * 60
+    print(f'Total Seconds: {from_days+from_hours+from_minutes}')
+
+
+lord_of_time()
