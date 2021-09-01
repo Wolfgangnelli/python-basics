@@ -1274,7 +1274,6 @@ def traduttore():
 
 
 traduttore()
-"""
 
 
 # The Surveyor
@@ -1303,3 +1302,26 @@ def calc_area(figure):
 fig = input(
     'Di quale figura vuoi calcolare l\'area? (cerchio, quadrato, rettangolo, triangolo): ')
 calc_area(fig.lower())
+"""
+
+# L'Americana
+
+
+def converter():
+    print('Hey! This function convert your meter value into miles, yards, feet and inches!')
+    user_meter_value = float(input('Please, enter the value in METER: '))
+    values = {}
+    for i in range(4):
+        if i == 0:
+            values['miles'] = (user_meter_value/1609.334)
+        elif i == 1:
+            values['yards'] = (user_meter_value*1.0936133)
+        elif i == 2:
+            values['feet'] = (user_meter_value*3.28084)
+        elif i == 3:
+            values['inches'] = (user_meter_value*39.3701)
+    for key in values.keys():
+        print(f'\n{key}: {values[key]}')
+
+
+converter()
