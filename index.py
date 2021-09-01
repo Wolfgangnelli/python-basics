@@ -1250,7 +1250,6 @@ def only_members(item, items_list):
 
 list_itm = ['Marco', 'Franco', 'Andrea', 'Mario', 'Alessandro']
 only_members('Mario', list_itm)
-"""
 
 
 # Il linguaggio dei furfanti n.14
@@ -1275,3 +1274,32 @@ def traduttore():
 
 
 traduttore()
+"""
+
+
+# The Surveyor
+def calc_area(figure):
+    area = 0
+    if figure == 'cerchio':
+        radius = float(input('Valore raggio? '))
+        area += 3.14 * (radius**2)
+    elif figure == 'quadrato':
+        lato = float(input('Valore lato: '))
+        area += lato**2
+    elif figure == 'rettangolo':
+        base = float(input('Valore base: '))
+        altezza = float(input('Valore altezza: '))
+        area += (base*altezza)
+    elif figure == 'triangolo':
+        base = float(input('Valore base: '))
+        altezza = float(input('Valore altezza: '))
+        area += (base*altezza)/2
+    if area != 0:
+        return print(f'L\'area del {figure} è {str(area)}')
+    else:
+        return print('Non è possibile effettuare calcoli per la figura inserita')
+
+
+fig = input(
+    'Di quale figura vuoi calcolare l\'area? (cerchio, quadrato, rettangolo, triangolo): ')
+calc_area(fig.lower())
