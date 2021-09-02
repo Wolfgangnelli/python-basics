@@ -1326,7 +1326,6 @@ def converter():
 
 converter()
 
-"""
 
 # The lord of time
 
@@ -1340,3 +1339,50 @@ def lord_of_time():
 
 
 lord_of_time()
+"""
+
+
+# Password Generator
+import string
+import random
+import secrets
+
+
+def generate_password():
+    characters_list = string.ascii_letters + string.digits
+    _password = []
+    print('Hey! This function generate a random passwords!')
+    password_type = int(input(
+        'Digita il numero 1 o 2 in base al tipo di password che desideri:\nComplessa (1)\nSemplice (2) \n'))
+    if password_type == 1:
+        for i in range(20):
+            _password.append(random.choice(characters_list))
+        _password = "".join(_password)
+        print(f'Random Password: {_password}')
+    elif password_type == 2:
+        for i in range(8):
+            _password.append(random.choice(characters_list))
+        _password = "".join(_password)
+        print(f'Random Password: {_password}')
+    else:
+        print('Error! The value is wrong! Enter 1 or 2')
+
+
+def psw_generator_pro():
+    print('Il programma permette di scegliere tra due livelli di complessità della password.')
+
+    ascii_chars = string.digits + string.ascii_letters + string.punctuation
+    alphanum_chars = string.digits + string.ascii_letters
+
+    if input('Desideri una password Semplice o Complessa? S/C ').upper() == 'C':
+        lunghezza = 20
+        tipo = ascii_chars
+    else:
+        lunghezza = 8
+        tipo = alphanum_chars
+
+    psw = "".join(secrets.choice(tipo) for _ in range(lunghezza))
+    print(f'La password generate è: {psw}')
+
+
+psw_generator_pro()
