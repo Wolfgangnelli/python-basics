@@ -1339,7 +1339,6 @@ def lord_of_time():
 
 
 lord_of_time()
-"""
 
 
 # Password Generator
@@ -1386,3 +1385,35 @@ def psw_generator_pro():
 
 
 psw_generator_pro()
+"""
+
+# Funzione genera mac
+import string
+import random
+
+
+def genera_mac():
+    ascii_char = string.ascii_lowercase + string.ascii_uppercase
+    random_char = random.choices(ascii_char, k=6)
+    indirizzo = ":".join("{0:X}".format(ord(c)) for c in random_char)
+    print(indirizzo)
+
+
+genera_mac()
+
+
+def generate_mac():
+    char_set = string.digits + 'ABCDEF'
+    mac_addr = ''
+    points = 0
+
+    for _ in range(6):
+        for _ in range(2):
+            mac_addr += random.choice(char_set)
+        if points < 5:
+            mac_addr += ':'
+            points += 1
+    return mac_addr
+
+
+print(generate_mac())
