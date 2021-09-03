@@ -1416,7 +1416,6 @@ def generate_mac():
 
 
 print(generate_mac())
-"""
 
 # Write a py function that takes a sequence of numbers and determines whether all the numbers are different from each other.
 
@@ -1433,3 +1432,18 @@ def is_different_numbers():
 
 
 is_different_numbers()
+"""
+
+# Write a py program to create all possible strings by using a,e,i,o,u. Use the characters excatly once.
+from itertools import permutations
+
+
+def possible_string():
+    chars = list('aeiou')
+    permutations_list = list(permutations(chars))
+    new_list = [''.join(list(p)) for p in permutations_list]
+    for s in new_list:
+        print(f'{s}, ')
+
+
+possible_string()
