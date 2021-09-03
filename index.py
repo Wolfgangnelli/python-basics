@@ -1446,7 +1446,6 @@ def possible_string():
 
 
 possible_string()
-"""
 
 # Python Basic (Part-II) 47. Write a py program which readds a text (only alphabetical characters and spaces) and prints two words. The first one is the word which is arise most frequently in the text.
 # The second one is the word which has the maximum number of letters.
@@ -1464,3 +1463,33 @@ for s in text_list:
         max_char = s
 print(
     f'Most frequent word: {common_word} ({common_word_num})\nWord with max number of letters: {max_char}')
+
+"""
+
+# Write a py program to find common divisors between two numbers in a given pair.
+
+
+def ngcd(x, y):
+    i = 1
+    while i <= x and i <= y:
+        if x % i == 0 and y % i == 0:
+            gcd = i
+        i += 1
+    return gcd
+
+
+def num_common_div(x, y):
+    n = ngcd(x, y)
+    result = 0
+    z = int(n**0.5)
+    i = 1
+    while i <= z:
+        if n % i == 0:
+            result += 2
+            if i == n/i:
+                result -= 1
+        i += 1
+    return result
+
+
+print(num_common_div(12, 24))
