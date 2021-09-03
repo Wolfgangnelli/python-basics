@@ -1385,7 +1385,6 @@ def psw_generator_pro():
 
 
 psw_generator_pro()
-"""
 
 # Funzione genera mac
 import string
@@ -1417,3 +1416,20 @@ def generate_mac():
 
 
 print(generate_mac())
+"""
+
+# Write a py function that takes a sequence of numbers and determines whether all the numbers are different from each other.
+
+
+def is_different_numbers():
+    num_seq = []
+    for _ in range(10):
+        num = int(input(f'Enter the {_+1}° integer number: '))
+        num_seq.append(num)
+    if len(num_seq) == len(set(num_seq)):
+        print('All numbers are different!')
+    else:
+        print('There are equal numbers!')
+
+
+is_different_numbers()
