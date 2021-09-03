@@ -1464,7 +1464,6 @@ for s in text_list:
 print(
     f'Most frequent word: {common_word} ({common_word_num})\nWord with max number of letters: {max_char}')
 
-"""
 
 # Write a py program to find common divisors between two numbers in a given pair.
 
@@ -1493,3 +1492,24 @@ def num_common_div(x, y):
 
 
 print(num_common_div(12, 24))
+"""
+
+# Write a Python program to reverse only the vowels of a given string
+
+
+def reverse_vowels(str1):
+    vowels = ''
+    for char in str1:
+        if char in 'aeiouAEIOU':
+            vowels += char
+    result_string = ''
+    for char in str1:
+        if char in 'aeiouAEIOU':
+            result_string += vowels[-1]
+            vowels = vowels[:-1]
+        else:
+            result_string += char
+    return result_string
+
+
+print(reverse_vowels('aeiou'))
