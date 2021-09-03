@@ -1492,7 +1492,6 @@ def num_common_div(x, y):
 
 
 print(num_common_div(12, 24))
-"""
 
 # Write a Python program to reverse only the vowels of a given string
 
@@ -1513,3 +1512,26 @@ def reverse_vowels(str1):
 
 
 print(reverse_vowels('aeiou'))
+"""
+
+# Module - types
+import types
+import copy
+
+num_list = [1, [2, 3, 4]]
+copy_list = copy.copy(num_list)
+
+
+class C:
+    def x():
+        pass
+
+
+def myFun():
+    pass
+
+
+print(isinstance(myFun, types.FunctionType))
+print(isinstance(lambda x: x, types.LambdaType))
+print(isinstance(C().x, types.MethodType))
+print(copy_list)
