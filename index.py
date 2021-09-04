@@ -1512,7 +1512,6 @@ def reverse_vowels(str1):
 
 
 print(reverse_vowels('aeiou'))
-"""
 
 # Module - types
 import types
@@ -1535,3 +1534,60 @@ print(isinstance(myFun, types.FunctionType))
 print(isinstance(lambda x: x, types.LambdaType))
 print(isinstance(C().x, types.MethodType))
 print(copy_list)
+
+
+# PYTHON DATA TYPE: STRING - EXERCISES
+
+# 89. Write a py program to remove unwanted characters from a given string
+import string
+
+unwanted_characters = string.punctuation
+given_string = input(
+    'Write a string with some of this chars (<=>?@[\]^_`{|}~): ')
+new_string = ''
+
+# 1° solution
+for c in given_string:
+    if c not in unwanted_characters:
+        new_string += c
+
+print(new_string)
+
+# 2° solution
+
+
+def remove_chars(given_string):
+    for c in unwanted_characters:
+        given_string = given_string.replace(c, '')
+    return given_string
+
+
+print(remove_chars(given_string))
+"""
+
+# 90. Write a py program to remove duplicate words from a given string
+
+# 1° solution
+
+
+def remove_duplicate(str1):
+    word_list = str1.split()
+    no_duplicate_list = set(word_list)
+    return ' '.join(no_duplicate_list)
+
+
+print(remove_duplicate(input('Enter a string with duplicate words: ')))
+
+# 2° solution (best)
+
+
+def unique_list(text_str):
+    l = text_str.split()
+    uniq = []
+    for c in l:
+        if c not in uniq:
+            uniq.append(c)
+    return ' '.join(uniq)
+
+
+print(unique_list(input('Enter unother string with duplicate words: ')))
