@@ -1,0 +1,254 @@
+{
+    "states": [
+      {
+        "name": "Alabama",
+        "abbreviation": "AL",
+        "area_codes": "059"
+      },
+      {
+        "name": "Alaska",
+        "abbreviation": "AK",
+        "area_codes": "059"
+      },
+      {
+        "name": "Arizona",
+        "abbreviation": "AZ",
+        "area_codes": "059"
+      },
+      {
+        "name": "Arkansas",
+        "abbreviation": "AR",
+        "area_codes": "059"
+      },
+      {
+        "name": "California",
+        "abbreviation": "CA",
+        "area_codes": "059"
+      },
+      {
+        "name": "Colorado",
+        "abbreviation": "CO",
+        "area_codes": "059"
+      },
+      {
+        "name": "Connecticut",
+        "abbreviation": "CT",
+        "area_codes": "059"
+      },
+      {
+        "name": "Delaware",
+        "abbreviation": "DE",
+        "area_codes": "059"
+      },
+      {
+        "name": "Florida",
+        "abbreviation": "FL",
+        "area_codes": "059"
+      },
+      {
+        "name": "Georgia",
+        "abbreviation": "GA",
+        "area_codes": "059"
+      },
+      {
+        "name": "Hawaii",
+        "abbreviation": "HI",
+        "area_codes": "059"
+      },
+      {
+        "name": "Idaho",
+        "abbreviation": "ID",
+        "area_codes": "059"
+      },
+      {
+        "name": "Illinois",
+        "abbreviation": "IL",
+        "area_codes": "059"
+      },
+      {
+        "name": "Indiana",
+        "abbreviation": "IN",
+        "area_codes": "059"
+      },
+      {
+        "name": "Iowa",
+        "abbreviation": "IA",
+        "area_codes": "059"
+      },
+      {
+        "name": "Kansas",
+        "abbreviation": "KS",
+        "area_codes": "059"
+      },
+      {
+        "name": "Kentucky",
+        "abbreviation": "KY",
+        "area_codes": "059"
+      },
+      {
+        "name": "Louisiana",
+        "abbreviation": "LA",
+        "area_codes": "059"
+      },
+      {
+        "name": "Maine",
+        "abbreviation": "ME",
+        "area_codes": "059"
+      },
+      {
+        "name": "Maryland",
+        "abbreviation": "MD",
+        "area_codes": "059"
+      },
+      {
+        "name": "Massachusetts",
+        "abbreviation": "MA",
+        "area_codes": "059"
+      },
+      {
+        "name": "Michigan",
+        "abbreviation": "MI",
+        "area_codes": "059"
+      },
+      {
+        "name": "Minnesota",
+        "abbreviation": "MN",
+        "area_codes": "059"
+      },
+      {
+        "name": "Mississippi",
+        "abbreviation": "MS",
+        "area_codes": "059"
+      },
+      {
+        "name": "Missouri",
+        "abbreviation": "MO",
+        "area_codes": "059"
+      },
+      {
+        "name": "Montana",
+        "abbreviation": "MT",
+        "area_codes": "059"
+      },
+      {
+        "name": "Nebraska",
+        "abbreviation": "NE",
+        "area_codes": "059"
+      },
+      {
+        "name": "Nevada",
+        "abbreviation": "NV",
+        "area_codes": "059"
+      },
+      {
+        "name": "New Hampshire",
+        "abbreviation": "NH",
+        "area_codes": "059"
+      },
+      {
+        "name": "New Jersey",
+        "abbreviation": "NJ",
+        "area_codes": "059"
+      },
+      {
+        "name": "New Mexico",
+        "abbreviation": "NM",
+        "area_codes": "059"
+      },
+      {
+        "name": "New York",
+        "abbreviation": "NY",
+        "area_codes": "059"
+      },
+      {
+        "name": "North Carolina",
+        "abbreviation": "NC",
+        "area_codes": "059"
+      },
+      {
+        "name": "North Dakota",
+        "abbreviation": "ND",
+        "area_codes": "059"
+      },
+      {
+        "name": "Ohio",
+        "abbreviation": "OH",
+        "area_codes": "059"
+      },
+      {
+        "name": "Oklahoma",
+        "abbreviation": "OK",
+        "area_codes": "059"
+      },
+      {
+        "name": "Oregon",
+        "abbreviation": "OR",
+        "area_codes": "059"
+      },
+      {
+        "name": "Pennsylvania",
+        "abbreviation": "PA",
+        "area_codes": "059"
+      },
+      {
+        "name": "Rhode Island",
+        "abbreviation": "RI",
+        "area_codes": "059"
+      },
+      {
+        "name": "South Carolina",
+        "abbreviation": "SC",
+        "area_codes": "059"
+      },
+      {
+        "name": "South Dakota",
+        "abbreviation": "SD",
+        "area_codes": "059"
+      },
+      {
+        "name": "Tennessee",
+        "abbreviation": "TN",
+        "area_codes": "059"
+      },
+      {
+        "name": "Texas",
+        "abbreviation": "TX",
+        "area_codes": "059"
+      },
+      {
+        "name": "Utah",
+        "abbreviation": "UT",
+        "area_codes": "059"
+      },
+      {
+        "name": "Vermont",
+        "abbreviation": "VT",
+        "area_codes": "059"
+      },
+      {
+        "name": "Virginia",
+        "abbreviation": "VA",
+        "area_codes": "059"
+      },
+      {
+        "name": "Washington",
+        "abbreviation": "WA",
+        "area_codes": "059"
+      },
+      {
+        "name": "West Virginia",
+        "abbreviation": "WV",
+        "area_codes": "059"
+      },
+      {
+        "name": "Wisconsin",
+        "abbreviation": "WI",
+        "area_codes": "059"
+      },
+      {
+        "name": "Wyoming",
+        "abbreviation": "WY",
+        "area_codes": "059"
+      }
+    ]
+  }
