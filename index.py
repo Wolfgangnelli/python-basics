@@ -1563,7 +1563,6 @@ def remove_chars(given_string):
 
 
 print(remove_chars(given_string))
-"""
 
 # 90. Write a py program to remove duplicate words from a given string
 
@@ -1591,3 +1590,45 @@ def unique_list(text_str):
 
 
 print(unique_list(input('Enter unother string with duplicate words: ')))
+"""
+
+# 1. Write a py program to convert JSON data to Python obj --- DECODING JSON (Deserialize)
+import json
+'''
+json_obj = '{"Name": "David", "Class": "I", "Age": 6}'
+python_obj = json.loads(json_obj)
+print('\nPython Object: ')
+print(python_obj)
+print('\nName: ', python_obj['Name'])
+print('Class: ', python_obj['Class'])
+print('Age: ', python_obj['Age'])
+'''
+
+# 2. Write a py program to convert Python obj to JSON data --- ENCODING PY OBJ (Serialize)
+'''
+py_obj = {'Name': 'David', 'Class': 'F', 'Age': 8}
+json_data = json.dumps(py_obj)
+print('JSON Data: ', json_data)
+'''
+
+# 4. Write a py program to convert Python dict obj (sort by key) to JSON dat. Print the obj members with indent level 4.
+'''
+py_dict = {'4': 5, '6': 7, '1': 3, '2': 4}
+print('Original py obj: ')
+print(py_dict)
+print('\nJSON data: ')
+print(json.dumps(py_dict, sort_keys=True, indent=4))
+'''
+
+# 6. Write a py program to create a new JSON file from an existing JSON file.
+
+with open('states.json') as f:
+    state_obj = json.load(f)
+
+for state in state_obj['states']:
+    del state['area_codes']
+
+with open('new_states.json', 'w') as f:
+    json.dump(state_obj, f, indent=2)
+
+print(state_obj)
