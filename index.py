@@ -1618,7 +1618,6 @@ print('Original py obj: ')
 print(py_dict)
 print('\nJSON data: ')
 print(json.dumps(py_dict, sort_keys=True, indent=4))
-'''
 
 # 6. Write a py program to create a new JSON file from an existing JSON file.
 
@@ -1632,3 +1631,23 @@ with open('new_states.json', 'w') as f:
     json.dump(state_obj, f, indent=2)
 
 print(state_obj)
+
+# 7. Write a py program to check whether an instance is complex or not.
+
+
+def encode_complex(object):
+    if isinstance(object, complex):
+        return [object.real, object.imag]
+    raise TypeError(repr(object) + ' is not JSON serialized')
+
+
+complex_obj = json.dumps(2 + 3j, default=encode_complex)
+print(complex_obj)
+'''
+
+# 9. Write a py program to access only unique key value of a Python object
+
+json_obj = '{"a":  1, "a":  2, "a":  3, "a": 4, "b": 1, "b": 2}'
+
+py_obj = json.loads(json_obj)
+print(json_obj)
