@@ -1590,7 +1590,6 @@ def unique_list(text_str):
 
 
 print(unique_list(input('Enter unother string with duplicate words: ')))
-"""
 
 # 1. Write a py program to convert JSON data to Python obj --- DECODING JSON (Deserialize)
 import json
@@ -1651,3 +1650,59 @@ json_obj = '{"a":  1, "a":  2, "a":  3, "a": 4, "b": 1, "b": 2}'
 
 py_obj = json.loads(json_obj)
 print(json_obj)
+
+
+# PYTHON DATA TYPE: LIST - EXERCISES
+
+# 1. Write a py program to sum all the items in a list
+
+list_items = [2, 4, 2, 2]
+
+
+def sum_list_items(list_):
+    output = 0
+    for item in list_:
+        output += item
+    return output
+
+
+print(sum_list_items(list_items))
+
+"""
+# 5. Write a py program to count the number of strings where the string length is 2 or more and the first and last character are same from a given list of strings
+
+test_list = ['abc', 'xyz', 'aba', '1221']
+
+# solution 1
+
+
+def check_same(l):
+    new_list = []
+    for i in l:
+        if i[0] == i[-1]:
+            new_list.append(i)
+    return new_list
+
+
+def check_len(l):
+    new_list = []
+    for i in l:
+        if len(i) >= 2:
+            new_list.append(i)
+    return check_same(new_list)
+
+
+print(len(check_len(test_list)))
+
+# solution 2
+
+
+def match_words_pro(l):
+    cnt = 0
+    for i in l:
+        if len(i) >= 2 and i[0] == i[-1]:
+            cnt += 1
+    return cnt
+
+
+print(match_words_pro(test_list))
