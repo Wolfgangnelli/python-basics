@@ -1668,7 +1668,6 @@ def sum_list_items(list_):
 
 print(sum_list_items(list_items))
 
-"""
 # 5. Write a py program to count the number of strings where the string length is 2 or more and the first and last character are same from a given list of strings
 
 test_list = ['abc', 'xyz', 'aba', '1221']
@@ -1706,3 +1705,18 @@ def match_words_pro(l):
 
 
 print(match_words_pro(test_list))
+"""
+
+# 6. Write a py program to get a list, sorted in increasing order by the last element in each tuple from a given list of non-empty tuples
+
+unordered_list = [(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]
+
+
+def last(n): return n[-1]
+
+
+def sort_list_last(tuples_list):
+    return sorted(tuples_list, key=last)
+
+
+print(sort_list_last(unordered_list))
