@@ -1706,7 +1706,6 @@ def match_words_pro(l):
 
 print(match_words_pro(test_list))
 
-"""
 # 6. Write a py program to get a list, sorted in increasing order by the last element in each tuple from a given list of non-empty tuples
 
 unordered_list = [(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]
@@ -1720,3 +1719,66 @@ def sort_list_last(tuples_list):
 
 
 print(sort_list_last(unordered_list))
+
+# 7. Write a py program to remove duplicates from a list
+_list = [2, 5, 98, 41, 2, 5, 5, 6]
+
+
+def unique_value(a):
+    dup_items = set()
+    uniq_items = []
+    for i in a:
+        if i not in dup_items:
+            uniq_items.append(i)
+            dup_items.add(i)
+    return uniq_items
+
+
+print(unique_value(_list))
+
+# 8. Write a py program to check a list is empty or not
+_list = []
+
+
+def is_empty(a):
+    return True if not a else False
+
+
+print(is_empty(_list))
+
+# 9. Write a py program to clone or copy a list
+_list = [2, 5, 98, 41, 2, 5, 5, 6]
+
+print(_list.copy())
+
+# 19. Write a py program to get the difference between the two lists
+list_1 = [1, 2, 3, 4, 5, 6]
+list_2 = [1, 2, 9, 4, 7, 6]
+
+# solution 1
+
+
+def get_differences(a, b):
+    list_3 = []
+    for x in a:
+        if x not in b:
+            list_3.append(x)
+    for y in b:
+        if y not in a:
+            list_3.append(y)
+
+    return list_3
+
+
+print(get_differences(list_1, list_2))
+
+# solution 2
+diff_list1_list2 = list(set(list_1) - set(list_2))
+diff_list2_list1 = list(set(list_2) - set(list_1))
+print(diff_list1_list2+diff_list2_list1)
+"""
+
+# 20. Write a py program access the index of a list
+nums = [5, 8, 6, 4, 2]
+for n_idx, n_val in enumerate(nums):
+    print(n_idx, n_val)
